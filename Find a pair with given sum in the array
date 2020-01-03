@@ -1,0 +1,50 @@
+/*Write a program in java to find a pair with given sum in the array.Go to the editor
+Expected Output :
+The given array : 6 8 4 -5 7 9
+The given sum : 15
+Pair of elements can make the given sum by the value of index 0 and 5
+*/
+
+import java.util.*;
+public class Array18 {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter how much value you have...");
+		int n=sc.nextInt();
+		int ar[]=new int[n];
+		System.out.println("Enter "+n+" value...");
+		for(int i=0;i<ar.length;i++) 
+		{
+			ar[i]=sc.nextInt();
+		}
+		
+		System.out.println("Array Element...");
+		dispArr(ar);
+		System.out.println("\nEnter sum what you want...");
+		int a=sc.nextInt();
+		System.out.println("Pair of elements can make the given sum by the value...");
+		for(int i=0;i<ar.length;i++) 
+		{
+			for(int j=i+1;j<ar.length;j++) 
+			{
+				if(ar[i]+ar[j]==a) 
+				{
+					System.out.println(ar[i]+" + "+ar[j]+" = "+a+" ----> index "+i+" and "+j);
+				}
+			}
+		}
+
+	}
+
+	private static void dispArr(int[] ar) {
+		for(int i=0;i<ar.length;i++) 
+		{
+			if(i<ar.length-1) 
+			     System.out.print(ar[i]+",");
+			else
+				System.out.print(ar[i]);
+		}
+		
+	}
+
+}
