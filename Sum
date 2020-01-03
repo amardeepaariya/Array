@@ -1,0 +1,32 @@
+/*Write a program in java to find the sum of all elements of the array.  Go to the editor 
+Test Data :
+Input the number of elements to be stored in the array :3
+Input 3 elements in the array :
+element - 0 : 2
+element - 1 : 5
+element - 2 : 8
+Expected Output :
+Sum of all elements stored in the array is : 15
+Click me to see the solution*/
+
+import java.util.Scanner;
+public class Array3 {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter how much value you want : ");
+		int n=sc.nextInt();
+		int ar[]=new int[n];
+		System.out.println("Enter "+n+" values :");
+		
+		for(int i=0;i<n;i++) {
+            System.out.print("Element "+i+"--->");
+			ar[i]=sc.nextInt();
+		}
+		int sum=0;
+        for(int i=0;i<ar.length;i++) {
+        	sum=sum+ar[i];
+        }
+        System.out.println("SUM of the element = "+sum);
+	}
+
+}
