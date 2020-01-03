@@ -1,0 +1,45 @@
+/*Write a program in java to count the frequency of each element of an array.Go to the editor 
+Test Data :
+Input the number of elements to be stored in the array :3
+Input 3 elements in the array :
+element - 0 : 25
+element - 1 : 12
+element - 2 : 43
+Expected Output :
+The frequency of all elements of an array :
+25 occurs 1 times
+12 occurs 1 times
+43 occurs 1 times
+*/
+
+import java.util.Scanner;
+public class Array8 {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter how much valu you have : ");
+		int n=sc.nextInt();
+		int ar[]=new int [n];
+		System.out.println("Enter "+n+" value :");
+		for(int i=0;i<ar.length;i++) 
+		{
+			ar[i]=sc.nextInt();
+		}
+        
+		for(int i=0;i<ar.length;i++) 
+		{
+			if(ar[i]>-1) 
+			{
+				int count=1;
+				for(int j=i+1;j<ar.length;j++) 
+				{
+					if (ar[i]==ar[j]) {
+						count++;
+						ar[j]=-1;
+					}
+				}
+				System.out.println(ar[i]+" occurs "+count+" times");
+			}
+		}
+	}
+
+}
