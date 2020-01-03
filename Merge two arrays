@@ -1,0 +1,74 @@
+/*Write a program in java to merge two arrays of same size sorted in descending order.Go to the editor
+Test Data :
+Input the number of elements to be stored in the first array :3
+Input 3 elements in the array :
+element - 0 : 1
+element - 1 : 2
+element - 2 : 3
+Input the number of elements to be stored in the second array :3
+Input 3 elements in the array :
+element - 0 : 1
+element - 1 : 2
+element - 2 : 3
+Expected Output :
+The merged array in descending order is :
+3 3 2 2 1 1
+*/
+
+import java.util.Scanner;
+public class Array7 {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter how much value you have in 1st :");
+		int n=sc.nextInt();
+		int a[]=new int [n];
+		System.out.println("Enter 1st Element "+n+" value :");
+		
+		for(int i=0;i<a.length;i++) {
+			a[i]=sc.nextInt();
+		}
+		System.out.println("Enter how much value you have in 2nd :");
+		int n1=sc.nextInt();
+		int b[]=new int [n1];
+		System.out.println("Enter 2nd Element "+n1+"value :");
+		
+		for(int i=0;i<b.length;i++) {
+			b[i]=sc.nextInt();
+		}
+
+		int c[]=mergeDec(a,b);
+		for(int j=0;j<c.length;j++) {
+			System.out.print(c[j]+" ");
+		}
+
+		
+		}
+
+	private  static int []mergeDec(int a[],int b[])
+	  	{
+	  		int []c=new int[a.length+b.length];
+	  		int i=a.length-1, j=b.length-1,k=0;
+	  		while(i>=0 && j>=0) 
+	  		{
+	  			if(a[i]>b[j]) 
+	  			{
+	  				c[k++]=a[i--];
+	  			}
+	  			else 
+	  			{
+	  				c[k++]=b[j--];
+	  			}
+	  		}
+	  		while(i>=0)
+	  		{
+	  			 c[k++]=a[i--];
+	  			}
+	  		while(j>=0)
+	  		{
+	  		 c[k++]=b[j--];
+	  		}
+	           return c;
+	  	}
+
+
+}
