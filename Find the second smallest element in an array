@@ -1,0 +1,56 @@
+/* Write a program in java to find the second smallest element in an array.Go to the editor
+Test Data :
+Input the size of array : 5
+Input 5 elements in the array (value must be <9999) :
+element - 0 : 0
+element - 1 : 9
+element - 2 : 4
+element - 3 : 6
+element - 4 : 5
+Expected Output :
+The Second smallest element in the array is : 4  
+*/
+
+import java.util.*;
+public class Array16 {
+
+	public static void main(String[] args) {
+			Scanner sc=new Scanner(System.in);
+			System.out.println("Enter how much value you have");
+			int n=sc.nextInt();
+			int ar[]=new int[n];
+			System.out.println("Enter "+n+" value :");
+			for(int i=0;i<ar.length;i++) {
+				ar[i]=sc.nextInt();
+			}
+			System.out.println("Array Elements...");
+			dispArrp(ar);
+			
+			int count;
+			for(int i=0;i<ar.length;i++) {
+				for(int j=i+1;j<ar.length;j++) {
+					if(ar[i]>ar[j]) {
+						count=ar[i];
+						ar[i]=ar[j];
+						ar[j]=count;
+					}
+				}
+			}
+			System.out.println("\nSecond Smallest Number : ");
+	        for(int i=0;i<1;i++) {
+	        	System.out.print(ar[1]);
+	        }
+	}
+
+	private static void dispArrp(int[] ar) {
+		for(int i=0;i<ar.length;i++) 
+		{
+			if(i<ar.length-1)
+				System.out.print(ar[i]+",");
+			else
+				System.out.print(ar[i]);
+		}
+		
+	}
+
+}
