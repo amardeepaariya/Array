@@ -1,0 +1,33 @@
+/*Write a program in java to store elements in an array and print it. Go to the editor  
+Test Data :
+Input 10 elements in the array :
+element - 0 : 1
+element - 1 : 1
+element - 2 : 2
+.......
+Expected Output :
+Elements in array are: 1 1 2 3 4 5 6 7 8 9
+*/
+  
+
+import java.util.Scanner;
+public class Array1 {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter how much value you want: ");
+		int n=sc.nextInt();
+		int ar[]=new int [n];
+		System.out.println("Enter "+n+" value :");
+		
+		for(int i=0;i<n;i++) {
+			System.out.print("Element: "+i+"-->");
+			ar[i]=sc.nextInt();
+		}
+		String s=" ";
+        for(int i=0;i<ar.length;i++) {
+        	s=s+" "+ar[i];
+        }
+        System.out.println("Element in array are :"+s);
+	}
+
+}
