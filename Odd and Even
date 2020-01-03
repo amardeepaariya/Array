@@ -1,0 +1,65 @@
+/* Write a program in java to separate odd and even integers in separate arrays. Go to the editor
+
+Test Data :
+Input the number of elements to be stored in the array :5
+Input 5 elements in the array :
+element - 0 : 25
+element - 1 : 47
+element - 2 : 42
+element - 3 : 56
+element - 4 : 32
+Expected Output :
+The Even elements are :
+42 56 32
+The Odd elements are :
+25 47
+*/
+
+import java.util.Scanner;
+public class Array {
+	public static void main(String[] args) {
+	  Scanner sc=new Scanner(System.in);
+	  System.out.println("Enter how much value you have ");
+	  int n=sc.nextInt();
+	  int ar[]=new int[n];
+	  System.out.println("Enter "+n+" value :");
+	  
+	  for(int i=0;i<ar.length;i++) {
+		  ar[i]=sc.nextInt();
+	  }
+	  int e[]=new int[n];
+	  int j=0,k=0;
+	  int o[]=new int[n];
+	  for(int i=0;i<ar.length;i++) {
+		  boolean b=isEven(ar[i]);
+		  if(b==true)
+		  {
+				e[j]=ar[i];
+				j++;
+			
+		  }
+		  else
+			  {
+					o[k]=ar[i];
+					k++;
+			  }
+		  }
+	  System.out.print("Even :");
+	  for(int i=0;i<j;i++) {
+		  System.out.print(e[i]+" ");
+	  }
+	  System.out.print("\nOdd :");
+	  for(int i=0;i<k;i++) {
+		  System.out.print(o[i]+" ");
+	  }
+	}
+
+	private static boolean isEven(int i) {
+		if(i%2==0) {
+			return true;
+		}
+		else
+		return false;
+	}
+
+}
