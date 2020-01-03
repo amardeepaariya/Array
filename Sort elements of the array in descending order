@@ -1,0 +1,39 @@
+/* Write a program in java to sort elements of the array in descending order.Go to the editor
+Test Data :
+Input the size of array : 3
+Input 3 elements in the array :
+element - 0 : 5
+element - 1 : 9
+element - 2 : 1
+Expected Output :
+Elements of the array in sorted descending order:
+9 5 1
+*/
+import java.util.Scanner;
+public class Array11 {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter how much value you have");
+		int n=sc.nextInt();
+		int ar[]=new int[n];
+		System.out.println("Enter "+n+" value :");
+		for(int i=0;i<ar.length;i++) {
+			ar[i]=sc.nextInt();
+		}
+		int count;
+		for(int i=0;i<ar.length;i++) {
+			for(int j=i+1;j<ar.length;j++) {
+				if(ar[i]<ar[j]) {
+					count=ar[i];
+					ar[i]=ar[j];
+					ar[j]=count;
+				}
+			}
+		}
+		System.out.println("Elements of the array in sorted descending order: ");
+        for(int i=0;i<ar.length;i++) {
+        	System.out.print(ar[i]+" ");
+        }
+	}
+
+}
