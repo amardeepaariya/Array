@@ -1,0 +1,89 @@
+/*Write a program in java to insert New value in the array (sorted list )..Go to the editor 
+Test Data :
+Input the size of array : 3
+Input 3 elements in the array in ascending order:
+element - 0 : 5
+element - 1 : 7
+element - 2 : 9
+Input the value to be inserted : 8
+Expected Output :
+The exist array list is :
+5 7 9
+After Insert the list is :
+5 7 8 9      */
+
+import java.util.Scanner;
+public class Array12 {
+	public static void main(String[] args) {
+		System.out.println("Enter First value in Assending order :");
+		int a[]=readArr();
+		System.out.println("Insert the 2nd value  :");
+		int b[]=readArr();
+		System.out.println("\nFirst Array...");
+		disArr(a);
+		System.out.println("\nSecond Array...");
+		disArr(b);
+		
+		int c[]=sorted1(a,b);
+		System.out.println("\nsorted....");
+		disArr(c);
+
+	}
+	
+	static int []sorted1(int a[],int b[])
+	{
+		int c[]=new int [a.length+b.length];
+		int j=0,k=0,i=0;
+		while(i<a.length && j<b.length) 
+		{
+			if(a[i]>b[j]) 
+			{
+				c[k++]=b[j++];
+			}
+			else 
+			{
+				c[k++]=a[i++];
+			}
+		}
+		while(i<a.length)
+		{
+			c[k]=a[i];
+			k++;
+			i++;
+		}
+		while(j<b.length) 
+		{
+			c[k]=b[j];
+			k++;
+			j++;
+		}
+		return c;
+
+	}
+
+	private static void disArr(int[] ar) {
+		for(int i=0;i<ar.length;i++) 
+		{
+			if(i<ar.length-1)
+				System.out.print(ar[i]+",");
+			else
+				System.out.print(ar[i]);
+		}
+		
+	}
+
+	private static int[] readArr() {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter how much valu you have :");
+		int n=sc.nextInt();
+		int ar[]=new int[n];
+		System.out.println("Enter "+n+" Values.");
+		
+		for(int i=0;i<ar.length;i++) 
+		{
+			ar[i]=sc.nextInt();
+		}
+				return ar;
+	}
+
+}
